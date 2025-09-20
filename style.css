@@ -1,12 +1,9 @@
 :root {
-    --bg-light: #f4f4f9;
-    --text-light: #333;
-    --bg-dark: #1e1e2f;
-    --text-dark: #fff;
+    --bg-color: #f4f4f9;
+    --text-color: #333;
+    --input-border: #ccc;
     --accent: #6C63FF;
     --accent-hover: #5548c8;
-    --input-bg: #fff;
-    --input-border: #ccc;
     --completed-opacity: 0.5;
 }
 
@@ -16,25 +13,27 @@
 
 body {
     font-family: 'Outfit', sans-serif;
-    background: var(--bg-light);
-    color: var(--text-light);
+    background: var(--bg-color);
+    color: var(--text-color);
     margin: 0;
-    padding: 2rem 1rem;
+    padding: 0.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 body.dark {
-    background: var(--bg-dark);
-    color: var(--text-dark);
+    --bg-color: #1e1e2f;
+    --text-color: #f4f4f9;
+    --input-border: #444466;
 }
 
 header {
     width: 100%;
-    padding: 1.5rem 2rem;
+    padding: 0 2rem;
+    max-width: 70rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -52,7 +51,7 @@ header h1 {
 
 .theme-toggle {
     cursor: pointer;
-    background: #fff;
+    background: var(--text-color);
     color: var(--accent);
     border: none;
     padding: 0.6rem 1.2rem;
@@ -115,8 +114,13 @@ header h1 {
     max-width: 400px;
     padding: 2.5rem 2rem;
     border-radius: 12px;
-    background: var(--bg-light);
+    background: var(--bg-color);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.5s ease-in-out;
+}
+
+body.dark .container {
+    background-color: #2e2e4b;
 }
 
 .input-group {
@@ -132,7 +136,8 @@ header h1 {
     font-size: 1rem;
     border-radius: 12px;
     border: 2px solid var(--input-border);
-    background: var(--input-bg);
+    background: var(--bg-color);
+    color: var(--text-color);
     outline: none;
     transition: all 0.2s ease-in-out;
 }
@@ -171,7 +176,8 @@ li {
     justify-content: space-between;
     padding: 1rem 1.2rem;
     border-radius: 12px;
-    background: var(--input-bg);
+    color: var(--text-color);
+    background: var(--bg-color);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     transition: all 0.2s ease-in-out;
 }
