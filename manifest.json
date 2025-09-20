@@ -1,6 +1,6 @@
 {
-  "name": "List To Buy",
-  "short_name": "ListToBuy",
+  "name": "BuyBuddy",
+  "short_name": "BuyBuddy",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#121212",
