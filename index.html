@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BuyBuddy</title>
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#6C63FF" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>BuyBuddy</h1>
+      <button class="theme-toggle">🌙</button>
+    </header>
+
+    <div class="container">
+      <div class="input-group">
+        <input type="text" id="itemInput" placeholder="Add an item..." />
+        <button onclick="addItem()">Add</button>
+      </div>
+      <ul id="list"></ul>
+    </div>
+
+    <button class="install-btn" style="display: none">⬇️ Install</button>
+    <div class="toast" id="toast">App installed successfully 🎉</div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
