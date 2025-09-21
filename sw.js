@@ -7,9 +7,9 @@ self.addEventListener("install", (e) => {
         "/style.css",
         "/script.js",
         "/manifest.json",
-        "/images/icon-192x192.png",
-        "/images/icon-512x512.png",
-        "/images/favicon.ico"
+        "/images/icons/icon-192.png",
+        "/images/icons/icon-512.png",
+        "/images/icons/favicon.ico"
       ]);
     })
   );
