@@ -1,5 +1,6 @@
 :root {
     --bg-color: #f4f4f9;
+    --bg-color-secondary: #e0e0f8;
     --text-color: #333;
     --input-border: #ccc;
     --accent: #6C63FF;
@@ -25,7 +26,8 @@ body {
 }
 
 body.dark {
-    --bg-color: #1e1e2f;
+    --bg-color: #2D2A47;
+    --bg-color-secondary: #3E3B60;
     --text-color: #f4f4f9;
     --input-border: #444466;
 }
@@ -114,13 +116,9 @@ header h1 {
     max-width: 400px;
     padding: 2.5rem 2rem;
     border-radius: 12px;
-    background: var(--bg-color);
+    background: var(--bg-color-secondary);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: all 0.5s ease-in-out;
-}
-
-body.dark .container {
-    background-color: #2e2e4b;
 }
 
 .input-group {
