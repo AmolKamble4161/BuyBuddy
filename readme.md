@@ -39,7 +39,7 @@ It supports **light/dark themes**, offline use, and can be installed on mobile a
 
 | Light Mode                               | Dark Mode                              |
 | ---------------------------------------- | -------------------------------------- |
-| ![Light UI](./images/listCart_Light.png) | ![Dark UI](./images/listCart_Dark.png) |
+| ![Light UI](./images/ListCart_light.png) | ![Dark UI](./images/ListCart_dark.png) |
 
 ---
 ## 🧩 Folder Structure
