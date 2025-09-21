@@ -1,6 +1,6 @@
 self.addEventListener("install", (e) => {
   e.waitUntil(
-    caches.open("list-to-buy-v1").then((cache) => {
+    caches.open("listCart-v1").then((cache) => {
       return cache.addAll([
         "/",
         "/index.html",

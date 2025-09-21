@@ -1,6 +1,6 @@
 {
-  "name": "BuyBuddy",
-  "short_name": "BuyBuddy",
+  "name": "ListCart",
+  "short_name": "ListCart",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#121212",

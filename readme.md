@@ -1,13 +1,13 @@
-# 📋 BuyBuddy
+# 📋 listCart
 
-BuyBuddy is a **Progressive Web App (PWA)** that helps you manage shopping or to-do lists with a clean and modern interface.  
+listCart is a **Progressive Web App (PWA)** that helps you manage shopping or to-do lists with a clean and modern interface.  
 It supports **light/dark themes**, offline use, and can be installed on mobile and desktop devices.
 
 ---
 
 ## 🚀 Live Demo  
-🔗 **Live Site:** [BuyBuddy Demo](https://amolkamble4161.github.io/BuyBuddy/)  
-📂 **Repository:** [BuyBuddy Repo](https://github.com/AmolKamble4161/BuyBuddy)
+🔗 **Live Site:** [listCart Demo](https://amolkamble4161.github.io/ListCart/)  
+📂 **Repository:** [listCart Repo](https://github.com/AmolKamble4161/ListCart)
 
 ---
 
@@ -39,12 +39,12 @@ It supports **light/dark themes**, offline use, and can be installed on mobile a
 
 | Light Mode                               | Dark Mode                              |
 | ---------------------------------------- | -------------------------------------- |
-| ![Light UI](./images/BuyBuddy_Light.png) | ![Dark UI](./images/BuyBuddy_Dark.png) |
+| ![Light UI](./images/listCart_Light.png) | ![Dark UI](./images/listCart_Dark.png) |
 
 ---
 ## 🧩 Folder Structure
 ```
-BuyBuddy/
+listCart/
 │── index.html
 │── style.css
 │── script.js

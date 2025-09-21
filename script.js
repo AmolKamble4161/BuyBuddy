@@ -7,7 +7,7 @@ let deferredPrompt;
 
 // Load saved items and theme from localStorage
 window.onload = () => {
-  const savedItems = JSON.parse(localStorage.getItem("listToBuy")) || [];
+  const savedItems = JSON.parse(localStorage.getItem("listCart")) || [];
   savedItems.forEach((item) => createItem(item.text, item.completed));
 
   const savedTheme = localStorage.getItem("theme");
@@ -33,7 +33,7 @@ function saveItems() {
       completed: li.classList.contains("completed"),
     });
   });
-  localStorage.setItem("listToBuy", JSON.stringify(items));
+  localStorage.setItem("listCart", JSON.stringify(items));
 }
 
 function createItem(value, completed = false) {
