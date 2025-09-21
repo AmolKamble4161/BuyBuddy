@@ -43,7 +43,7 @@ It supports **light/dark themes**, offline use, and can be installed on mobile a
 
 ---
 ## 🧩 Folder Structure
-
+```
 BuyBuddy/
 │── index.html
 │── style.css
@@ -52,7 +52,7 @@ BuyBuddy/
 │── sw.js
 │── images/
 │    └── all images/
-
+```
 ---
 ## 📌 Future Improvements
 
