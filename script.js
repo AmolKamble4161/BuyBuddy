@@ -76,6 +76,7 @@ function loadDarkModePreference() {
     body.classList.remove("dark-mode");
     darkModeToggle.textContent = "🌙";
   }
+  setThemeColor(savedMode ? "#2c3e50" : "#f4f7f6");
 }
 
 // notification/status bar color
@@ -335,7 +336,7 @@ function shareList() {
       ".quantity-measurement-input"
     ).value;
     const completed = li.querySelector('input[type="checkbox"]').checked;
-    items.push(`${completed ? "[✓] " : ""}${text} ${quantityMeasurement}`);
+    items.push(`${completed ? "[✓] " : "[ ]"}${text} ${quantityMeasurement}`);
   });
 
   const listText = "My Shopping List:\n" + items.join("\n");
@@ -345,10 +346,10 @@ function shareList() {
       .share({
         title: "ListCart Shopping List",
         text: listText,
-        url: window.location.href,
+        url: `\n${window.location.href}`,
       })
       .then(() => {
-        console.log("Shopping list shared successfully");
+        alert("Shopping list shared successfully");
       })
       .catch((error) => {
         console.error("Error sharing shopping list:", error);
