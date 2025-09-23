@@ -10,27 +10,161 @@
     <meta name="google-site-verification" content="uLBNl5YtfggBnUoWNf7VH9fi2JJZMVmgEEG5Rn3eS1k" />
     <link rel="shortcut icon" href="./images/icons/favicon.ico" type="image/x-icon">
     <link rel="manifest" href="manifest.json" />
-    <meta name="theme-color" content="#6C63FF" />
+    <!-- <meta name="theme-color" content="#6C63FF" /> -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <header>
-      <h1>ListCart</h1>
-      <button class="theme-toggle">🌙</button>
-    </header>
+  <body class="light-mode">
+    <!-- Sidebar Menu -->
+    <div id="sidebar" class="sidebar">
+        <button id="closeSidebarBtn" class="close-sidebar-btn" aria-label="Close menu">&times;</button>
+        <div class="sidebar-content">
+            <h2 class="sidebar-heading">ListCart Menu</h2>
+            <ul>
+                <li><a href="#" class="menu-link" id="aboutLink">About This App</a></li>
+                <li><a href="#" class="menu-link" id="howToUseLink">How to Use</a></li>
+                <li><a href="#" class="menu-link" id="privacyLink">Privacy Policy</a></li>
+                <li><a href="#" class="menu-link" id="checkUpdateLink">Check for Update</a></li>
+            </ul>
+            <h3 class="sidebar-heading">Connect</h3>
+            <div class="social-links">
+                <!-- IMPORTANT: Replace with your actual links! -->
+                <a href="https://wa.me/918412974161" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.linkedin.com/in/amol-kamble-7ba3a4242/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/AmolKamble4161" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:amolkamble4161@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+    <div id="sidebarBackdrop" class="sidebar-backdrop"></div>
 
     <div class="container">
-      <div class="input-group">
-        <input type="text" id="itemInput" placeholder="Add an item..." />
-        <button onclick="addItem()">Add</button>
-      </div>
-      <ul id="list"></ul>
+        <!-- The main application content (shopping list interface) -->
+        <main id="mainAppContent" class="active"> <!-- Added 'active' here for initial visibility -->
+            <div class="app-header-in-container">
+                <button id="hamburgerBtn" class="header-icon-btn" aria-label="Open menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 class="header-title">ListCart</h1>
+                <button id="darkModeToggle" class="header-icon-btn" aria-label="Toggle dark mode">🌙</button>
+            </div>
+
+            <div class="add-item-group">
+                <input type="text" id="itemInput" placeholder="Add item (e.g., Milk 500ml, Banana 0.5dz)...">
+                <button id="addItemBtn">Add</button>
+            </div>
+
+            <div class="action-buttons">
+                <button id="sortListBtn"><i class="fas fa-sort-alpha-down"></i> Sort Alphabetically</button>
+                <button id="shareListBtn"><i class="fas fa-share-alt"></i> Share List</button>
+            </div>
+
+            <ul id="shoppingList">
+                <!-- Shopping list items will be injected here by JavaScript -->
+            </ul>
+
+            <p id="emptyListMessage" class="empty-list-message">Your shopping list is empty! Start adding items above.</p>
+        </main>
+
+        <!-- About This App Page -->
+        <div id="aboutPage" class="content-page">
+            <h2>About ListCart</h2>
+            <p>ListCart is your simple, intuitive shopping list application designed to make your grocery runs and daily errands easier. Add items quickly, mark them off as you shop, and keep your lists organized. Built with a focus on usability and offline access, ListCart is a Progressive Web App (PWA) that can be installed on your device for a native app-like experience.</p>
+            <h3>Key Features:</h3>
+            <ul>
+                <li><strong>Quick Add:</strong> Add items with optional quantities and measurements (e.g., "Milk 1L", "Apples 3kg").</li>
+                <li><strong>Mark as Complete:</strong> Check off items as you purchase them.</li>
+                <li><strong>Edit & Delete:</strong> Easily modify item names or remove items from your list.</li>
+                <li><strong>Alphabetical Sort:</strong> Organize your list instantly.</li>
+                <li><strong>Share List:</strong> Share your current shopping list with others.</li>
+                <li><strong>Dark Mode:</strong> Switch between light and dark themes for comfortable viewing.</li>
+                <li><strong>Offline Support:</strong> Works even without an internet connection (as a PWA).</li>
+                <li><strong>Installable:</strong> Add ListCart to your home screen for quick access.</li>
+            </ul>
+            <button class="back-to-list-btn">Back to List</button>
+        </div>
+
+        <!-- How To Use Page -->
+        <div id="howToUsePage" class="content-page">
+            <h2>How to Use ListCart</h2>
+            <h3>1. Adding Items:</h3>
+            <p>Type your item in the input field. You can include a quantity and measurement at the end. For example:</p>
+            <ul>
+                <li><code>Milk 500ml</code> (Item: Milk, Quantity/Measurement: 500ml)</li>
+                <li><code>Bread 1</code> (Item: Bread, Quantity/Measurement: 1)</li>
+                <li><code>Apples 0.5kg</code> (Item: Apples, Quantity/Measurement: 0.5kg)</li>
+                <li><code>Bananas</code> (Item: Bananas, Quantity/Measurement: 1 - default)</li>
+            </ul>
+            <p>Press "Add" or hit Enter.</p>
+
+            <h3>2. Marking Items as Complete:</h3>
+            <p>Click the checkbox next to an item to mark it as purchased. The item text will be struck through.</p>
+
+            <h3>3. Editing Items:</h3>
+            <p>Click directly on an item's name to make it editable. Type your changes and then click outside the input field or press Enter to save.</p>
+
+            <h3>4. Changing Quantity/Measurement:</h3>
+            <p>Click on the quantity/measurement field next to an item to edit it. Changes are saved automatically.</p>
+
+            <h3>5. Deleting Items:</h3>
+            <p>Click the trash can icon (<i class="fas fa-trash-alt"></i>) next to an item to remove it from your list.</p>
+
+            <h3>6. Sorting Your List:</h3>
+            <p>Click the "Sort Alphabetically" button to arrange all items in your list from A-Z.</p>
+
+            <h3>7. Sharing Your List:</h3>
+            <p>Click the "Share List" button to share your current list with friends or family via your device's sharing options.</p>
+
+            <h3>8. Dark Mode:</h3>
+            <p>Use the moon/sun icon (<span style="font-family: 'Segoe UI Emoji', sans-serif;">🌙</span>/<span style="font-family: 'Segoe UI Emoji', sans-serif;">☀️</span>) in the top-right corner to toggle between light and dark themes.</p>
+
+            <h3>9. Install as App:</h3>
+            <p>If available, click the "Install App" button at the bottom-right to add ListCart to your device's home screen for quick, offline access.</p>
+            <button class="back-to-list-btn">Back to List</button>
+        </div>
+
+        <!-- Privacy Policy Page -->
+        <div id="privacyPolicyPage" class="content-page">
+            <h2>Privacy Policy for ListCart</h2>
+            <p>This Privacy Policy describes how your personal information is handled in ListCart. Please read this policy carefully to understand our practices regarding your information.</p>
+
+            <h3>Information We Collect</h3>
+            <p>ListCart is designed to be a local-first application. This means:</p>
+            <ul>
+                <li><strong>No Personal Information Collection:</strong> We do not collect, store, or transmit any personally identifiable information about you. Your name, email, location, or any other personal data is not collected by ListCart.</li>
+                <li><strong>Shopping List Data:</strong> Your shopping list items, their quantities, completion status, and dark mode preference are stored locally on your device using your browser's Local Storage. This data is entirely under your control and is not sent to any external servers.</li>
+                <li><strong>No Analytics:</strong> We do not use any third-party analytics services (like Google Analytics) to track your usage of the app.</li>
+            </ul>
+
+            <h3>How We Use Your Information</h3>
+            <p>Since we do not collect personal information, we do not use it. Your local shopping list data is used solely to provide you with the functionality of the ListCart application on your device.</p>
+
+            <h3>Data Security</h3>
+            <p>Your shopping list data is stored securely in your browser's local storage. Access to this data is restricted by your browser's security policies. While we take reasonable steps to protect your data within the application, it's important to remember that no local storage method is 100% immune to all forms of unauthorized access, especially if your device security is compromised.</p>
+
+            <h3>Third-Party Services</h3>
+            <p>ListCart uses Font Awesome for icons, which is loaded from a CDN. We do not integrate with any other third-party services that would require sharing your data.</p>
+
+            <h3>Changes to This Privacy Policy</h3>
+            <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+
+            <h3>Contact Us</h3>
+            <p>If you have any questions about this Privacy Policy, please contact us at: <a href="mailto:amolkamble4161@gmail.com">amolkamble4161@gmail.com</a></p>
+            <p><em>Last updated: September 22, 2025</em></p>
+            <button class="back-to-list-btn">Back to List</button>
+        </div>
     </div>
 
-    <button class="install-btn" style="display: none">⬇️ Install</button>
-    <div class="toast" id="toast">App installation started.</br> Check your notifications! 🎉</div>
+    <footer class="footer">
+        <p>&copy; 2025 ListCart. Developed by Amol Kamble. <br>
+           <a href="https://github.com/amolkamble4161/ListCart" target="_blank">View on GitHub</a></p>
+    </footer>
+
+    <!-- PWA Installation Button -->
+    <button id="installButton"><i class="fas fa-download"></i> Install App</button>
+
 
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
