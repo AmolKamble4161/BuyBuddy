@@ -4,8 +4,8 @@ const urlsToCache = [
     'index.html', // Alias for the root file
     "/style.css",
     "/script.js",
-    'manifest.json',
-    'sw.js', // Cache the service worker itself
+    '/manifest.json',
+    '/sw.js', // Cache the service worker itself
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css',
     "/images/icons/icon-192.png",
     "/images/icons/icon-512.png",

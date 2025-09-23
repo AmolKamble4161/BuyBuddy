@@ -38,7 +38,7 @@ window.addEventListener("beforeinstallprompt", (e) => {
   installButton.style.display = "block"; // Show the install button
 });
 
-installButton.addEventListener("click", () => {
+installButton.addEventListener("click", async () => {
   installButton.style.display = "none"; // Hide the button once clicked
   if (deferredPrompt) {
     deferredPrompt.prompt();
@@ -54,6 +54,7 @@ installButton.addEventListener("click", () => {
     });
   }
 });
+
 
 // --- Dark Mode Logic ---
 function toggleDarkMode() {
@@ -72,11 +73,12 @@ function loadDarkModePreference() {
   if (savedMode === "true") {
     body.classList.add("dark-mode");
     darkModeToggle.textContent = "☀️";
+    setThemeColor("#2c3e50");
   } else {
     body.classList.remove("dark-mode");
     darkModeToggle.textContent = "🌙";
+    setThemeColor("#f4f7f6");
   }
-  setThemeColor(savedMode ? "#2c3e50" : "#f4f7f6");
 }
 
 // notification/status bar color
@@ -149,9 +151,7 @@ function saveItems() {
   const items = [];
   shoppingList.querySelectorAll("li").forEach((li) => {
     const text = li.querySelector(".item-name").textContent;
-    const quantityMeasurement = li.querySelector(
-      ".quantity-measurement-input"
-    ).value;
+    const quantityMeasurement = li.querySelector(".quantity-measurement-input").value;
     const completed = li.querySelector('input[type="checkbox"]').checked; // Get checkbox state
     items.push({ text, quantityMeasurement, completed });
   });
@@ -367,7 +367,7 @@ function shareList() {
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
-      .register("/sw.js")
+      .register("./sw.js")
       .then((registration) => {
         console.log("Service Worker registered! Scope:", registration.scope);
 
