@@ -35,11 +35,11 @@ body.dark-mode {
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'outfit','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-    margin: 0;
-    padding: 20px;
+    margin: 0px 15px 0px;
+    padding: 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,7 +54,8 @@ body.no-scroll {
 
 .container {
     background-color: var(--container-bg);
-    padding: 0 30px 30px 30px;
+    padding: 0 10px 10px 10px;
+    margin-top: 05px;
     /* Adjusted padding-top for new header */
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -130,6 +131,7 @@ body.dark-mode .app-header-in-container {
     border: 1px solid var(--border-color);
     border-radius: 5px;
     font-size: 1em;
+    min-width: 150px;
     background-color: var(--container-bg);
     color: var(--text-color);
     transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
@@ -393,7 +395,7 @@ body.dark-mode .sidebar {
     color: var(--primary-color);
     margin-bottom: 20px;
     font-size: 1.8em;
-    text-align: left;
+    text-align: center;
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 10px;
     margin-left: -5px;
@@ -438,7 +440,7 @@ body.dark-mode .sidebar h3 {
 }
 
 .social-links {
-    margin-top: 20px;
+    /* margin-top: 20px; */
     display: flex;
     gap: 15px;
     justify-content: center;
@@ -498,23 +500,24 @@ body.dark-mode .sidebar h3 {
     display: none;
     /* Hidden by default, with !important to override */
     position: fixed;
-    bottom: 25px;
-    right: 25px;
-    padding: 15px 20px;
+    bottom: 80px;
+    right: -30px;
+    transform: rotate(270deg);
+    padding: 10px 15px;
     background-color: #28a745;
     /* Green color for install */
     color: white;
     border: none;
     border-radius: 50px;
     /* Pill shape */
-    font-size: 1.1em;
+    font-size: 0.7em;
     font-weight: bold;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: background-color 0.2s ease, transform 0.2s ease;
     z-index: 100;
     /* Ensure it's above other content */
-    animation: pulse-animation 2s infinite;
+    /* animation: pulse-animation-dark 2s infinite; */
     /* Add pulse animation */
 }
 
@@ -531,7 +534,6 @@ body.dark-mode .sidebar h3 {
 
 body.dark-mode #installButton {
     background-color: #2ecc71; /* Dark mode green */
-    animation: pulse-animation-dark 2s infinite;
 }
 
 body.dark-mode #installButton:hover {
@@ -539,36 +541,16 @@ body.dark-mode #installButton:hover {
 }
 
 /* Pulse Animation */
-@keyframes pulse-animation {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
-    }
-
-    70% {
-        transform: scale(1.05);
-        box-shadow: 0 0 0 10px rgba(40, 167, 69, 0);
-    }
-
-    100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
-    }
-}
-
 @keyframes pulse-animation-dark {
     0% {
-        transform: scale(1);
         box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7);
     }
 
     70% {
-        transform: scale(1.05);
         box-shadow: 0 0 0 10px rgba(46, 204, 113, 0);
     }
 
     100% {
-        transform: scale(1);
         box-shadow: 0 0 0 0 rgba(46, 204, 113, 0);
     }
 }
