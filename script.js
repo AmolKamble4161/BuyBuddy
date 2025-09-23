@@ -349,7 +349,7 @@ function shareList() {
         url: `\n${window.location.href}`,
       })
       .then(() => {
-        alert("Shopping list shared successfully");
+        console.log("Shopping list shared successfully");
       })
       .catch((error) => {
         console.error("Error sharing shopping list:", error);
