@@ -336,7 +336,7 @@ function shareList() {
       ".quantity-measurement-input"
     ).value;
     const completed = li.querySelector('input[type="checkbox"]').checked;
-    items.push(`${completed ? "[✓] " : "[ ]"}${text} ${quantityMeasurement}`);
+    items.push(`${completed ? "[✓] " : "[✗] "}${text} ${quantityMeasurement}`);
   });
 
   const listText = "My Shopping List:\n" + items.join("\n");
@@ -346,7 +346,7 @@ function shareList() {
       .share({
         title: "ListCart Shopping List",
         text: listText,
-        url: `\n${window.location.href}`,
+        url: `"\n"${window.location.href}`,
       })
       .then(() => {
         console.log("Shopping list shared successfully");
