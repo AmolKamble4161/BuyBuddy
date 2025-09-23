@@ -346,7 +346,7 @@ function shareList() {
       .share({
         title: "ListCart Shopping List",
         text: listText,
-        url: `"\n"${window.location.href}`,
+        url: window.location.href,
       })
       .then(() => {
         console.log("Shopping list shared successfully");
