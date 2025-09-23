@@ -61,6 +61,7 @@ function toggleDarkMode() {
   const isDarkMode = body.classList.contains("dark-mode");
   localStorage.setItem("darkMode", isDarkMode);
   darkModeToggle.textContent = isDarkMode ? "☀️" : "🌙"; // Change emoji
+  setThemeColor(isDarkMode ? "#2c3e50" : "#f4f7f6"); // Change theme color
 }
 
 darkModeToggle.addEventListener("click", toggleDarkMode);
@@ -74,6 +75,14 @@ function loadDarkModePreference() {
   } else {
     body.classList.remove("dark-mode");
     darkModeToggle.textContent = "🌙";
+  }
+}
+
+// notification/status bar color
+function setThemeColor(color) {
+  let themeMeta = document.querySelector('meta[name="theme-color"]');
+  if (themeMeta) {
+    themeMeta.setAttribute("content", color);
   }
 }
 
