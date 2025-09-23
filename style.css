@@ -495,7 +495,7 @@ body.dark-mode .sidebar h3 {
 
 /* PWA Install Button */
 #installButton {
-    display: none !important;
+    display: none;
     /* Hidden by default, with !important to override */
     position: fixed;
     bottom: 25px;
